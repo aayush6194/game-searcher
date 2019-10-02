@@ -1,0 +1,5 @@
+<mat-card class="card">
+    <div mat-card-title class="capitalize card"> {{ game.slug }}</div>
+    <app-loader [show]='imageLoader'></app-loader>
+    <img mat-card-image [hidden]="imageLoader"  [src]='game.background_image' style='width: 200px'  (load)="this.imageLoader = false;" >
+</mat-card>

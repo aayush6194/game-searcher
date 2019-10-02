@@ -1,0 +1,9 @@
+<form [formGroup]='myForm'>
+    <mat-form-field class="example-full-width">
+        <label hidden for="game">Game</label>
+        <input matInput name="game" placeholder="Type the Name of the Game" formControlName='game'>
+        <mat-error  *ngIf='game.touched && game.invalid'>Error</mat-error >
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)='submit()'>Submit</button>
+    
+</form>
