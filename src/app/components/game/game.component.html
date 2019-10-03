@@ -1,5 +1,10 @@
-<mat-card class="card">
-    <div mat-card-title class="capitalize card"> {{ game.slug }}</div>
+<mat-card class="card" (click)='something()'>
+    <div mat-card-title class="capitalize card"> {{ game.name }}</div>
     <app-loader [show]='imageLoader'></app-loader>
-    <img mat-card-image [hidden]="imageLoader"  [src]='game.background_image' style='width: 200px'  (load)="this.imageLoader = false;" >
+    <img mat-card-image [hidden]="imageLoader" [src]='game.background_image' style='width: 200px'
+        (load)="this.imageLoader = false;">
+    <div mat-card-title class="capitalize card"> {{ game.released }}</div>
+    <mat-chip-list>
+        <mat-chip *ngFor='let platform of game.platforms' color="primary">{{ platform.platform.name }}</mat-chip>
+    </mat-chip-list>
 </mat-card>

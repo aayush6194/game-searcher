@@ -19,4 +19,8 @@ export class GameComponent implements OnInit {
     //   }
     // }, 10000);
   }
+  something(){
+    console.log(this.game)
+  }
+
 }
