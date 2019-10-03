@@ -7,9 +7,11 @@ export class GameAddService {
 
   constructor() { }
   addGame(game: any) {
-    let storedGames: any = JSON.parse(localStorage.getItem('games'));
-    let newStoredGames = {games : [... [game], storedGames.games]};
-    localStorage.setItem('games', JSON.stringify(newStoredGames));
+    let allGames : any= localStorage.getItem('games');
+    let storedGames: any = JSON.parse(allGames === null ? JSON.stringify({games : []}) : allGames);
+   // let newStoredGames = {games : [... [game], storedGames.games]};
+   storedGames['games'].push(game)
+    localStorage.setItem('games', JSON.stringify(storedGames));
   }
 
   getGames() {

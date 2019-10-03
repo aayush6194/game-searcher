@@ -1,8 +1,17 @@
 <form [formGroup]='myForm'>
-        <label hidden for="game">Game</label>
-        <input matInput name="game" placeholder="Type the Name of the Game" formControlName='game'>
-        <mat-error  *ngIf='game.touched && game.invalid'>Error</mat-error >
+    <div class="grid-1">
+        <div>
+            <label hidden for="game">Game</label>
+            <input matInput name="game" placeholder="Type the Name of the Game" formControlName='game'
+                [matAutocomplete]="auto">
+            <mat-error *ngIf='game.touched && game.invalid'>Error</mat-error>
 
-    <button mat-raised-button color="primary" (click)='submit()'>Submit</button>
-    
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of gameOptions" [value]="option.name">
+                    {{option.name}}
+                </mat-option>
+            </mat-autocomplete>
+        </div>
+        <button mat-raised-button color="primary" (click)='submit()'>Submit</button>
+    </div>
 </form>

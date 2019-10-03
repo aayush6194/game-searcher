@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, NgModule } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { GameAddService } from '../../service/game-add.service';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -9,7 +9,7 @@ export class GameComponent implements OnInit {
   @Input() game;
   imageLoader = true;
   imageError = false;
-  constructor() {}
+  constructor(private GameAddService: GameAddService) {}
 
   ngOnInit() {
     // setTimeout((): void => {
@@ -18,9 +18,10 @@ export class GameComponent implements OnInit {
     //     this.imageLoader = false;
     //   }
     // }, 10000);
+    console.log(this.GameAddService.getGames());
   }
-  addGame(){
-    console.log(this.game)
+  addGame() {
+    this.GameAddService.addGame(this.game);
   }
 
 }

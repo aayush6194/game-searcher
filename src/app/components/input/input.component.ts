@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validator, Validators } from '@angular/forms';
 import { DataService } from '../../service/data.service';
-
+import { GameService } from '../../service/game.service';
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
@@ -10,7 +10,10 @@ import { DataService } from '../../service/data.service';
 export class InputComponent implements OnInit {
   myForm: FormGroup;
   message: string;
-  constructor(private formBuilder: FormBuilder, private data: DataService) { }
+  gameOptions: any;
+  constructor(private formBuilder: FormBuilder,
+              private data: DataService,
+              private gameService: GameService) { }
 
   ngOnInit() {
     this.myForm = this.formBuilder.group({
@@ -20,16 +23,20 @@ export class InputComponent implements OnInit {
       ]]
     });
 
-    this.myForm.valueChanges.subscribe((res)=>{
+    this.myForm.valueChanges.subscribe((res) => {
             this.data.changeMessage(res.game);
-            console.log(res.game)
-    })
+    });
+
+    this.data.currentMessage.subscribe(message => {this.message = message;
+                                                   // tslint:disable-next-line: max-line-length
+                                                   this.gameService.getGame(this.message).subscribe((res: any) => this.gameOptions = res.results.slice(0, 5));
+    });
   }
-  submit(){
+  submit() {
     console.log('Submitted');
   }
 
-  get game(){
+  get game() {
     return this.myForm.get('game');
   }
 }

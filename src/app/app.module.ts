@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GameComponent } from './components/game/game.component';
 import { InputComponent } from './components/input/input.component';
-import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoaderComponent } from './components/loader/loader.component';
 import { MaterialModule } from './material/material.module';
