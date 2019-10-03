@@ -9,13 +9,18 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoaderComponent } from './components/loader/loader.component';
 import { MaterialModule } from './material/material.module';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './pages/home/home.component';
+import { GameWishListComponent } from './pages/game-wish-list/game-wish-list.component';
 @NgModule({
   declarations: [
     AppComponent,
     GameListComponent,
     GameComponent,
     InputComponent,
-    LoaderComponent
+    LoaderComponent,
+    HomeComponent,
+    GameWishListComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,8 @@ import { MaterialModule } from './material/material.module';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

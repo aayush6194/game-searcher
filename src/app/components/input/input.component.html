@@ -4,7 +4,6 @@
             <label hidden for="game">Game</label>
             <input matInput name="game" placeholder="Type the Name of the Game" formControlName='game'
                 [matAutocomplete]="auto">
-            <mat-error *ngIf='game.touched && game.invalid'>Error</mat-error>
 
             <mat-autocomplete #auto="matAutocomplete">
                 <mat-option *ngFor="let option of gameOptions" [value]="option.name">
@@ -14,4 +13,5 @@
         </div>
         <button mat-raised-button color="primary" (click)='submit()'>Submit</button>
     </div>
+    <mat-error *ngIf='game.touched && game.invalid'>Error</mat-error>
 </form>
