@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { GameWishListComponent } from './pages/game-wish-list/game-wish-list.component';
 import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/reducer';
 import { PlaceholderLoaderComponent } from './components/placeholder-loader/placeholder-loader.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
@@ -34,7 +35,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({
+      game : reducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

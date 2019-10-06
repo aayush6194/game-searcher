@@ -2,6 +2,6 @@
     <mat-selection-list>
            
                 <app-game *ngFor='let game of games' [game]='game'></app-game>
-        
+                <p *ngFor='let t of gameList'>{{t}}</p>
     </mat-selection-list>
 </div>

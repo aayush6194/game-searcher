@@ -7,12 +7,12 @@ const initialState: any = {
 };
 
 
-export function reducer( state: any = [initialState], action: any){
+export function reducer( state: Game[] = [initialState], action: any){
     switch (action.type) {
         case GameActions.ADD_GAME:
-            return {
-
-            };
+            return[
+                ...state, {name : 'tup'}
+            ];
 
         case GameActions.REMOVE_GAME:
             return {
