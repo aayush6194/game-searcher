@@ -1,0 +1,11 @@
+.gradient-heading{
+    background: -webkit-linear-gradient(-150deg,teal, #16CCB6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  line-height: 1;
+  font-size: 3em;
+  text-transform: uppercase;
+  color: #a483c5;
+  font-family: arial;
+  }

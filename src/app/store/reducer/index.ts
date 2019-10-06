@@ -1,17 +1,16 @@
 import { Action } from '@ngrx/store';
 import { Game } from '../../../models';
 import * as GameActions from '../action';
+import { GameAddService } from '../../service/game-add.service';
+ 
+let g: GameAddService = new  GameAddService();
+const initialState: any  = g.getGames().games;
 
-const initialState: any = {
-    name :  'Initial'
-};
-
-
-export function reducer( state: Game[] = [initialState], action: any){
+export function reducer( state: any[] = initialState, action: any){
     switch (action.type) {
         case GameActions.ADD_GAME:
             return[
-                ...state, {name : 'tup'}
+                ...state
             ];
 
         case GameActions.REMOVE_GAME:

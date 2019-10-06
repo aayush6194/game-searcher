@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../service/game.service';
 import { DataService } from '../../service/data.service';
-import { AppState} from '../../app.state';
-import { Game } from '../../../models';
-import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
+
 @Component({
   selector: 'app-game-list',
   templateUrl: './game-list.component.html',
@@ -13,12 +10,9 @@ import { Store } from '@ngrx/store';
 export class GameListComponent implements OnInit {
   games: any[];
   message: string;
-  gameList: Observable<Game[]>;
-  constructor(private game: GameService, private data: DataService, private store: Store<AppState>) {
-    this.store.select('game').subscribe((data : any) => this.gameList = data);
-    console.log('this.gameList');
-    console.log(this.gameList);
-    this.store.dispatch({type: 'ADD_GAME'});
+ 
+  constructor(private game: GameService, private data: DataService) {
+
    }
 
   ngOnInit() {
