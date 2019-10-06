@@ -1,3 +1,14 @@
 .capitalize{
     text-transform: capitalize;
 }
+
+.main{
+    background-image: url(../assets/bg.svg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0%;
+    /* position: absolute;
+    top: 0; */
+    width: 100%;
+}

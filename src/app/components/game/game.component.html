@@ -1,8 +1,8 @@
 <mat-card class="card center z-depth-3">
-    <button mat-fab color="primary" style="float: right" (click)='addGame()'>
+    <button mat-fab class="teal lighten-2" style="float: right" (click)='addGame()'>
         <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
     </button>
-    <div mat-card-title class="capitalize"> {{ game.name }}</div>
+    <div mat-card-title class="capitalize"> {{ game.Title }}</div>
     <app-loader [show]='imageLoader'></app-loader>
     <img mat-card-image [hidden]="imageLoader" [src]='game.background_image' style='width: 30%; min-width: 280px;'
         (load)="this.imageLoader = false;">

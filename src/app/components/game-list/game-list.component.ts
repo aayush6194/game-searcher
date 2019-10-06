@@ -14,7 +14,7 @@ export class GameListComponent implements OnInit {
 
   ngOnInit() {
     this.data.currentMessage.subscribe(message => {this.message = message;
-                                                   this.game.getGame(this.message).subscribe((res: any) => this.games = res.results);
+                                                   this.game.getGame(this.message).subscribe((res: any) => { this.games = res.results});
     });
   }
 

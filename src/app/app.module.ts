@@ -12,6 +12,9 @@ import { MaterialModule } from './material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { GameWishListComponent } from './pages/game-wish-list/game-wish-list.component';
+import { StoreModule } from '@ngrx/store';
+import { PlaceholderLoaderComponent } from './components/placeholder-loader/placeholder-loader.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,9 @@ import { GameWishListComponent } from './pages/game-wish-list/game-wish-list.com
     InputComponent,
     LoaderComponent,
     HomeComponent,
-    GameWishListComponent
+    GameWishListComponent,
+    PlaceholderLoaderComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
