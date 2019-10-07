@@ -1,8 +1,13 @@
 <mat-card class="card center z-depth-4 " style="width: 100%;">
-    <button mat-fab class="teal lighten-2" style="float: right" (click)='addGame()'>
+    <button mat-fab class="teal lighten-2" style="float: right" (click)='addGame()' *ngIf='!delete'>
         <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
     </button>
-    <div mat-card-title class="capitalize"> {{ game.Title }}</div>
+   
+        <button mat-fab class="red lighten-2" style="float: right" (click)='deleteGame()' *ngIf='delete'>
+            <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+        </button>
+   
+    <div mat-card-title class="capitalize"> {{ game.name }}</div>
     <app-loader [show]='imageLoader'></app-loader>
     <img mat-card-image [hidden]="imageLoader" [src]='game.background_image' style='width: 30%; min-width: 280px;'
         (load)="this.imageLoader = false;">
