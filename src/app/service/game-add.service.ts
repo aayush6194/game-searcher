@@ -15,6 +15,6 @@ export class GameAddService {
   }
 
   getGames() {
-    return JSON.parse(localStorage.getItem('games'));
+    return JSON.parse(localStorage.getItem('games') || '{}');
   }
 }
